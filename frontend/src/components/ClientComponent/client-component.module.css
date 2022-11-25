@@ -1,0 +1,10 @@
+.client-component{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 30%;
+    align-items: center;
+}
+.client-component > button{
+   height: 20px;
+}

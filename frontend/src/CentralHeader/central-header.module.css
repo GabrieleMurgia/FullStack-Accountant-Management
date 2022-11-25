@@ -1,0 +1,14 @@
+.centralHeader{
+    border: 1px solid black;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 10%;
+    align-items: center;
+}
+.left-centralHeader{
+    padding: 10px;
+}
+.left-centralHeader > span{
+    margin-right: 20px;
+}

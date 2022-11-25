@@ -1,0 +1,28 @@
+.login-component{
+    border: 1px solid black;
+    height: 99.8vh;
+    width: 99.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-container{
+    border: 1px solid red;
+    height: 60%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4%;
+}
+.inside-form-container{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+}
+.inside-form-container > button:hover{
+    cursor: pointer;
+}

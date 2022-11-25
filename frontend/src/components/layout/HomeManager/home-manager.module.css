@@ -1,0 +1,19 @@
+.home-manager{
+    border: 1px solid black;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.in-scadenza-wrapper{
+    border: 1px solid red;
+    height: 60%;
+    width: 60%;
+}
+.underline{
+    
+}
+.red{
+    color: rgb(239, 124, 124);
+    cursor: pointer;
+}

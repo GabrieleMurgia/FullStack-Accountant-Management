@@ -1,0 +1,15 @@
+.dashboard{
+    border: 1px solid black;
+    height: 99vh;
+    width: 99vw;
+    display: flex;
+}
+.dx-dashboard{
+    border: 1px solid blue;
+    width: 87%;
+    height: 100%;
+}
+.inside-dashboard{
+ border: 1px solid yellow;
+ height: 81%;
+}

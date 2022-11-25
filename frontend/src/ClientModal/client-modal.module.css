@@ -1,0 +1,78 @@
+.client-modal{
+    position:fixed;
+    left: 48vw;
+    right: 0;
+    top: 20vh;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    height: 20vh;
+    width: 30vw;
+    padding: 10px;
+}
+.client-modal-background{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 1px;
+    left: 1px;
+    background:rgb(57, 57, 57,0.4);
+    z-index: 20000;
+}
+.header-client-modal{
+    display: flex;
+   gap: 200px;
+}
+.calendar-modal{
+    background-color: white;
+    position:fixed;
+    left: 10vw;
+    right: 0;
+    top: 20vh;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    height: 50vh;
+    width: 80vw;
+    padding: 10px;
+}
+.calendar-form-left{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 60%;
+    justify-content: space-around;
+}
+.calendar-form-right{
+    display: flex;
+    flex-direction: column;
+}
+.calenndar-form{
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+    gap: 40%;
+    width: 30vw;
+    height: 40vh;
+}
+.delete-clients{
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid black;
+        flex-direction: column;
+}
+.delete-clients > button{
+    height: 20px;
+}
+.clients > button:hover{
+    cursor: pointer;
+}
+.clients{
+    display: flex;
+}
