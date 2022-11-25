@@ -22,28 +22,16 @@ const initialState = {
         id:"233223232323erere23232"
       },
     ],
-    users:[
-      {
-        title:"Albano - Contanti",
-        start: new Date(2021,6,0),
-        end: new Date(2021,6,0)
-      },
-      {
-        title:"Giggi d'alessio - Carta",
-        start: new Date(2021,6,0),
-        end: new Date(2021,6,0)
-      },
-      {
-        title:"Enrico Papi - Carta",
-        start: new Date(2021,6,0),
-        end: new Date(2021,6,0)
-      },
-      {
-        title:"Gennaros - Contanti ",
-        describe:"CIAOCIAO",
-        start: new Date(2022,11,0),
-        end: new Date(2022,11,0)
-      },
+    expirations:[
+     {
+      costumer:"Gerry Scotti",
+      amount:100,
+      commission:5,
+      payment:"carta",
+      status:"e",
+      reminder:new Date('December 17, 1995').toString().slice(0, 15),
+      date:new Date('December 17, 1995').toString().slice(0, 15),
+     },
     ],
   }
   ,
@@ -76,9 +64,9 @@ export const gestionaleSlice = createSlice({
   removePaymentMethod:(state,action) => {
     state.value.payments = state.value.payments.filter(item => item.id !== action.payload)
   },
-  addUser:(state,action)=>{
-    state.value.users = [
-      ...state.value.users,
+  addExpiration:(state,action)=>{
+    state.value.expirations = [
+      ...state.value.expirations,
       {
         "title":action.payload.client + " - " + action.payload.payment,
         "start":action.payload.start,
@@ -86,12 +74,12 @@ export const gestionaleSlice = createSlice({
       }
     ]
   },
-  removeUser:(state,action)=>{
-    state.value.users = state.value.users.filter(item => item.title !== action.payload)
+  removeExpiration:(state,action)=>{
+    state.value.expirations = state.value.expirations.filter(item => item.title !== action.payload)
   }
   },
 })
 
-export const { addClient , removeClient , addPaymentMethod, removePaymentMethod, addUser ,removeUser } = gestionaleSlice.actions
+export const { addClient , removeClient , addPaymentMethod, removePaymentMethod, addExpiration ,removeExpiration } = gestionaleSlice.actions
 
 export default gestionaleSlice.reducer

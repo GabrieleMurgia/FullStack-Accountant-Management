@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addClient, addPaymentMethod, addUser, removeUser } from '../redux/gestionale';
+import { addClient, addPaymentMethod, addExpiration, removeExpiration } from '../redux/gestionale';
 import classes from './client-modal.module.css';
 import "react-datepicker/dist/react-datepicker.css"
 import ReactDatePicker from 'react-datepicker';
@@ -45,7 +45,7 @@ export const ClientModal = (props) => {
 	}
 
 	const handleCalendar = ()=>{
-		dispatch( addUser(newEvent) )
+		dispatch( addExpiration(newEvent) )
 	}
 
 	
@@ -102,7 +102,7 @@ export const ClientModal = (props) => {
 						{users && users.map(item=>{
 							return <div className={classes["clients"]}>
 								<span>{item.title}</span>
-								<button onClick={()=>{dispatch(removeUser(item.title))}}>x</button>
+								<button onClick={()=>{dispatch(removeExpiration(item.title))}}>x</button>
 							</div>
 						})}
 					</div>

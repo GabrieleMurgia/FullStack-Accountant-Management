@@ -1,17 +1,55 @@
 import classes from './calendar-manager.module.css';
-import { Calendar, dateFnsLocalizer, momentLocalizer } from 'react-big-calendar';
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import moment from 'moment-timezone';
 import { ClientModal } from '../../../ClientModal/ClientModal';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import { Table } from 'antd';
 require('moment/locale/it.js')
 
 export const CalendarManager = (props) => {
-
-	const localizer = momentLocalizer(moment)
-	const events = useSelector((state) => state.gestionale.value.users)
+	const expirations = useSelector((state) => state.gestionale.value.expirations)
 	const [showModal,setShowModal] = useState(false)
+
+	 
+
+const columns = [
+	{
+		title:"Cliente",
+		dataIndex:"costumer",
+		key:"key"
+	},
+	{
+		title:"Importo",
+		dataIndex:"amount",
+		key:"key"
+	},
+	{
+		title:"Provvigione",
+		dataIndex:"commission",
+		key:"key"
+	},
+	{
+		title:"Metodo Pagamento",
+		dataIndex:"payment",
+		key:"key"
+	},
+	{
+		title:"Stato Pagamento",
+		dataIndex:"status",
+		key:"key"
+	},
+	{
+		title:"Promemoria",
+		dataIndex:"reminder",
+		key:"key"
+	},
+	{
+		title:"Data",
+		dataIndex:"date",
+		key:"key"
+	},
+]
 
 	const handleShowModal = ()=>{
 		setShowModal(!showModal)
@@ -20,17 +58,10 @@ export const CalendarManager = (props) => {
 	return (
 		<div>
 			<button onClick={()=>handleShowModal()}>Aggiungi al Calendario</button>
-			<Calendar localizer={localizer} events={events} startAccessor="start" endAccessor="end" style={{height:400,margin:"10px"}}   messages={{
-                    next: "Avanti",
-                    previous: "Indietro",
-                    today: "Oggi",
-                    month: "Mese",
-                    week: "Settimana",
-                    day: "Giorno",
-					date:"Data",
-					event:"Evento",
-					time:"Orario",
-                  }} />
+				<Table
+				 dataSource={expirations} 
+				columns={columns}
+				></Table>
 				{ showModal && <ClientModal handleShowModal={handleShowModal} type="calendar"></ClientModal> }
 		</div>
 	);
