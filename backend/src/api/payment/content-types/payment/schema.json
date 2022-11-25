@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "singularName": "payment",
+    "pluralName": "payments",
+    "displayName": "Payment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "method": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "expiration_date": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::expiration-date.expiration-date",
+      "inversedBy": "payment"
+    }
+  }
+}

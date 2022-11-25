@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "statuses",
+  "info": {
+    "singularName": "status",
+    "pluralName": "statuses",
+    "displayName": "Status"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "sigle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "expiration_date": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::expiration-date.expiration-date",
+      "inversedBy": "status"
+    }
+  }
+}

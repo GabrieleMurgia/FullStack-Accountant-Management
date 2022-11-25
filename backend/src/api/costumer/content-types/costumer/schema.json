@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "costumers",
+  "info": {
+    "singularName": "costumer",
+    "pluralName": "costumers",
+    "displayName": "Costumer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "businessName": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 20
+    },
+    "expiration_dates": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::expiration-date.expiration-date",
+      "mappedBy": "costumer"
+    }
+  }
+}
