@@ -12,8 +12,8 @@ function App() {
 
   return (
     <div className="App">
-      {!showLogin && <DashBoardCommercialista></DashBoardCommercialista> }
-    { showLogin && <LoginComponent handleLogin={handleLogin}></LoginComponent> }
+      {true && <DashBoardCommercialista></DashBoardCommercialista> }
+    {/* { showLogin && <LoginComponent handleLogin={handleLogin}></LoginComponent> } */}
     </div>
   );
 }
